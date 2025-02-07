@@ -1,7 +1,8 @@
-# minecraft-bedrock-tools
-Welcome to the minecraft-bedrock-tools repository!  This repository is dedicated to simplifying the installation, update process, and control of Minecraft Bedrock Edition servers on Debian-based systems. Whether you're setting up a private server for friends or launching a public realm, our tools make it easy to get started.
+# mcsrv - Minecraft Server Installer and Autoupdater
+Welcome to the mcsrv repository!  This repository is dedicated to simplifying the installation, update process, and control of Minecraft Bedrock Edition servers on Debian-based systems. Whether you're setting up a private server for friends or launching a public realm, this script makes it easy to get started.
 
-# Minecraft Bedrock Server Installation Script (install-bedrock-server.sh)
+# All-In-One Script
+Running this script will install a bedrock minecraft server and an updater.  systemd is then updated to run the updater daily.  The update script is created in /usr/local/bin/mcupdater.sh
 
 ## Description
 
