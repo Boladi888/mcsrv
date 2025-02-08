@@ -1,12 +1,23 @@
-# mcsrv - Minecraft Server Installer and Autoupdater
-Welcome to the mcsrv repository!  This repository is dedicated to simplifying the installation, update process, and control of Minecraft Bedrock Edition servers on Debian-based systems. Whether you're setting up a private server for friends or launching a public realm, this script makes it easy to get started.
+# TLDR - How to use
+Log on to your Ubuntu machine intended to be a server.
 
-# All-In-One Script
-Running this script will install a bedrock minecraft server and an updater.  systemd is then updated to run the updater daily.  The update script is created in /usr/local/bin/mcupdater.sh
+Download the latest release .zip on the right.
 
-## Description
+Find the file, extract it, go into that folder.
 
-This script automates the installation and setup of a Minecraft Bedrock Edition server on a Ubuntu or Debian-based Linux system. It ensures necessary dependencies are installed, downloads the latest server version, configures the server properties, and sets up supervision for automatic management of the server process.
+Right click on mcsrv.sh, go to Properties and do 2 things:
+1) Make mcsrv.sh "Executable as a Program"
+2) Click Permissions -> Others -> Access -> Change to "Read and Write"
+
+Then, inside the mcsrv-x.x.x folder, right click -> Open in Terminal
+
+Enter the following to run the install your Minecraft server
+```
+sudo ./mcsrv.sh
+```
+
+# mcsrv - Full Description
+This script installs the latest Minecraft Bedrock server directly from minecraft.net on Ubuntu Linux & all Debian-based systems and sets up an updater to run everyday at 2am.  It has been tested on Ubuntu 24 and should work for all Debain-based Linux systems.  The server is installed to /opt/YOUR_SERVER_NAME and the updater is installed to /usr/local/bin/mcupdater.sh
 
 ## Features
 
@@ -19,28 +30,59 @@ This script automates the installation and setup of a Minecraft Bedrock Edition 
 - **Firewall Rules**: Checks if `iptables` is installed and configures it to allow UDP traffic on the specified port.
 - **Verification**: Confirms the server is running and listening on the specified port.
 
+## Basic Install Options
+
+- Server name
+- Level name
+- Gamemode
+- Difficulty
+- Allow cheats
+- Number of players
+
+## Advanced Install Options
+Advanced is really only needed if installing a 2nd Minecraft server on the same LAN
+
+- Force gamemode
+- Server port
+- Server portv6
+- Lan Visability
+- Online mode
+- Allow list
+- View distance
+- Player idle timeout
+- Max threads
+- Tick distance
+- Default player permission level
+- Texture pack required
+- Content log file
+- Compression threshold
+- Compression algorithm
+- Server authoritative movement
+- Player position acceptance threshold
+- Movement action directionthreshold
+- Server authoritative block breaking
+- Chat restriction
+- Disable Player interation
+- Client side chunk generation
+- Block network IDs as hashes
+- Custom skins
+- Server build radius ratio
+
 
 ## Usage
 
 Run the script with sudo privileges on a Ubuntu or Debian system:
 ```
-  sudo ./install-bedrock-server.sh
+  sudo ./mcsrv.sh
 ```
 The script will handle the entire setup process, and upon completion, your Minecraft Bedrock server will be up and running. You can interact with the server's command-line console using:
 ```
-  sudo supervisorctl fg bedrock-server
+  sudo supervisorctl fg YOUR_SERVER_NAME
 ```
 
 
 
-# Minecraft Bedrock Server Update Script (update-bedrock-server.sh)
 
-## Important Note
-This script is meant to work with Bedrock installations done using the (install-bedrock-server.sh) script. Any other setups and installations may not be compatible with this update script.
-
-## Description
-
-This script automates the process of updating an existing Minecraft Bedrock Edition server on a Linux system. It searches for existing installations, verifies the version, downloads the latest version if necessary, backs up the current server, and applies the update.
 
 ## Features
 
