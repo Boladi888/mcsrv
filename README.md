@@ -11,15 +11,19 @@ Right click on mcsrv.sh, go to Properties and do 2 things:
 
 Then, inside the mcsrv-x.x.x folder, right click -> Open in Terminal
 
-Enter the following to run the install your Minecraft server
+Enter the following to install your Minecraft server
 ```
-sudo ./mcsrv.sh
+  sudo ./mcsrv.sh
 ```
 
 # mcsrv - Full Description
-This script installs the latest Minecraft Bedrock server directly from minecraft.net on Ubuntu Linux & all Debian-based systems and sets up an updater to run everyday at 2am.  It has been tested on Ubuntu 24 and should work for all Debain-based Linux systems.  The server is installed to /opt/YOUR_SERVER_NAME and the updater is installed to /usr/local/bin/mcupdater.sh
+This script installs the latest Minecraft Bedrock server directly from minecraft.net on Ubuntu Linux & all Debian-based systems and sets up an updater to run everyday at 2am.  It has been tested on Ubuntu 24 and should work for all Debain-based Linux systems.  
 
-## Features
+The server is installed to /opt/YOUR_SERVER_NAME
+
+The updater is installed to /usr/local/bin/mcupdater.sh
+
+## Intaller Features
 
 - **Environment Checks**: Ensures the script is run with sudo privileges and checks for a supported operating system (Ubuntu or Debian).
 - **Port Availability**: Verifies that the default ports (`19132` for IPv4 and `19133` for IPv6) are not in use by other processes.
@@ -68,7 +72,6 @@ Advanced is really only needed if installing a 2nd Minecraft server on the same 
 - Custom skins
 - Server build radius ratio
 
-
 ## Usage
 
 Run the script with sudo privileges on a Ubuntu or Debian system:
@@ -79,35 +82,15 @@ The script will handle the entire setup process, and upon completion, your Minec
 ```
   sudo supervisorctl fg YOUR_SERVER_NAME
 ```
+To manually run the updater
+```
+  sudo /usr/local/bin/mcupdater.sh
+```
 
-
-
-
-
-## Features
+## Updater Features
 
 - **Find Installations: Searches the file system for existing Minecraft Bedrock server installations.
 - **User Selection: Prompts the user to select which installation to update if multiple installations are found.
 - **Version Check: Compares the current server version with the latest available version to determine if an update is needed.
 - **Backup and Update: Backs up the current server directory before applying the update to ensure data integrity.
 - **Supervisor Control: Stops the server using Supervisor before updating and restarts it afterward.
-
-## Usage
-
-Run the script with sudo privileges on a Linux system:
-```
-  sudo ./update-bedrock-server.sh
-```
-The script will guide you through selecting an installation to update and handle the update process if a newer version is available.
-
-## Cleanup
-
-This script does not automatically delete the backup or the latest downloaded zip file. You will need to manage these files manually to ensure your system does not run out of storage space.
-
-## Consideration
-
-If you want to automate the update process, you can add this script to cron and run it periodically. For example, to run the script daily at midnight, add the following line to your crontab file (crontab -e):
-```
-  0 0 * * * /bin/echo "u" | /bin/bash /path/to/update-bedrock-server.sh
-```
-Ensure the script has the necessary permissions and is executable:
