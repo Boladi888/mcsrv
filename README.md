@@ -72,7 +72,7 @@ Advanced is really only needed if installing a 2nd Minecraft server on the same 
 - Custom skins
 - Server build radius ratio
 
-# Note that all of these options can be configured from within Minecraft
+### Note that all of these options can be configured from within Minecraft
 
 ## Usage
 
