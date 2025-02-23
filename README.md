@@ -1,15 +1,15 @@
 # TLDR - How to use
 Log on to your Ubuntu machine intended to be a server.
 
-Download the latest release .zip on the right.
+Download the ZIP from the "<> Code" dropdown.
 
 Find the file, extract it, go into that folder.
 
 Right click on mcsrv.sh, go to Properties and do 2 things:
-1) Make mcsrv.sh "Executable as a Program"
+1) Make mc_srv.sh "Executable as a Program"
 2) Click Permissions -> Others -> Access -> Change to "Read and Write"
 
-Then, inside the mcsrv-x.x.x folder, right click -> Open in Terminal
+Then, inside the mcsrv-main folder, right click -> Open in Terminal
 
 Enter the following to install your Minecraft server
 ```
