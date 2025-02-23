@@ -4,7 +4,7 @@
 echo 
 echo "Welcome to Boladi's Super-Easy Minecraft Server Install Script!"
 echo "Hit ctrl-c to exit at any time"
-echo "https://github.com/Boladi888/minecraft-bedrock-tools"
+echo "https://github.com/Boladi888/mcsrv"
 echo "web3boladi@gmail.com"
 echo
 read -n 1 -s -r -p "Press any key to continue..."
