@@ -13,7 +13,7 @@ Then, inside the mcsrv-main folder, right click -> Open in Terminal
 
 Enter the following to install your Minecraft server
 ```
-  sudo ./mcsrv.sh
+  sudo ./mc_srv.sh
 ```
 
 # mcsrv - Full Description
