@@ -124,6 +124,25 @@ while true; do
     fi
 done
 
+default_player_permission_level="member"
+
+# Prompt for default-player-permission-level
+while true; do
+    echo
+    echo "Select the default player permission level:"
+    echo "Which permission level new players will have when they join for the first time."
+    echo "1. Visitor"
+    echo "2. Member"
+    echo "3. Operator"
+    read -p "Enter the number corresponding to the default player permission level (default is member): " default_player_permission_level
+    case $default_player_permission_level in
+        1) default_player_permission_level="visitor"; break ;;
+        2) default_player_permission_level="member"; break ;;
+        3) default_player_permission_level="operator"; break ;;
+        *) echo "Invalid option. Please select 1, 2, or 3." ;;
+    esac
+done
+
 #Set some default variables
 server=$server_name
 user='minecraft_user'
@@ -139,7 +158,6 @@ view_distance=32
 player_idle_timeout=30
 max_threads=8
 tick_distance=4
-default_player_permission_level="member"
 texturepack_required="false"
 content_log_file_enabled="false"
 compression_threshold=1
@@ -310,23 +328,6 @@ if [ "$mode" = "advanced" ]; then
         else
             echo "Invalid input. Please enter a value between 4 and 12."
         fi
-    done
-
-    # Prompt for default-player-permission-level
-    while true; do
-        echo
-        echo "Select the default player permission level:"
-        echo "Which permission level new players will have when they join for the first time."
-        echo "1. Visitor"
-        echo "2. Member"
-        echo "3. Operator"
-        read -p "Enter the number corresponding to the default player permission level (default is member): " default_player_permission_level
-        case $default_player_permission_level in
-            1) default_player_permission_level="visitor"; break ;;
-            2) default_player_permission_level="member"; break ;;
-            3) default_player_permission_level="operator"; break ;;
-            *) echo "Invalid option. Please select 1, 2, or 3." ;;
-        esac
     done
 
     # Prompt for texturepack-required
